@@ -18,15 +18,15 @@ server {
     index  index.html index.htm;
 
     location /document_images {
-        rewrite ^(.*) https://$host/openmrs/auth?requested_document=$uri permanent;
+        rewrite ^(.*) https://$host:${HTTP_PORT}/openmrs/auth?requested_document=$uri permanent;
     }
 
     location /uploaded_results {
-        rewrite ^(.*) https://$host/openmrs/auth?requested_document=$uri permanent;
+        rewrite ^(.*) https://$host:${HTTP_PORT}/openmrs/auth?requested_document=$uri permanent;
     }
 
     location /uploaded-files {
-        rewrite ^(.*) https://$host/openmrs/auth?requested_document=$uri permanent;
+        rewrite ^(.*) https://$host:${HTTP_PORT}/openmrs/auth?requested_document=$uri permanent;
     }
 
     location = /openmrs/auth {
